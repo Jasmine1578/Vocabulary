@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vocabulary</title>
+<style type="text/css">
+    body {
+        width: 100%;
+        height: 100%;
+        background-color:#FFFFFF;
+    }
+    h1 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align:center;
+        color:#000000;
+    }
+    #logo {
+        color: #FFFFFF;
+        font-size: 2.4em;
+        font-family: 'Marck Script', cursive;
+    }
+    #input1 {
+        background: #2500f7;
+        height: 105px;
+        border-radius: 0 0 10px 10px;
+        padding-top: 15px;
+        text-align: left;
+        padding-right: 10px;
+    }
+    #search {
+        height: 55px;
+        padding-top: 13px;
+        top: 5px;
+    }
+    #but {
+        padding-top: 3px;
+    }
+    label {
+        font-weight: bold;
+        font-size: 1em;
+    }
+    #in_word {
+        padding-top: 3px;
+    }
+    #but1 {
+        height: 25px;
+    }
+
+</style>
+</head>
+<body>
+<!--<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>--> 
+    <!--<div>
+        <form action="create.php" method="post">
+        <p>Имя:
+        <input type="text" name="username" /></p>
+        <p>Возраст:
+        <input type="number" name="userage" /></p>
+        <input type="submit" value="Добавить">
+    </form>
+        <h1>Hello, Web Application!!</h1>
+    </div>-->
+    <div id="input1">
+        <p id="logo">Англо-русский словарь</p>
+        <fieldset id="search">
+            <div id="input">
+                <!--</form> <form action="create.php" method="post">-->
+                <form action="/" method="post">
+                <!--<legend>Словарь</legend>-->
+                    <label>Введите слово для поиска</label></p>
+                <!--<input id="localData"><br>-->
+                    <input id="in_word" type="text" name="word"/></p>
+                    <div id="but">
+                        <!--<button onclick="saveData()">Поиск</button>
+                        <button onclick="loadData()">Загрузить</button>-->
+                        <input id="but1" type="submit" value="Поиск">
+                </form>
+            </div>
+            {% if translation %}
+                <h2>Перевод:</h2>
+                <p>{{ translation }}</p>
+            {% elif error %}
+                <h2>Ошибка:</h2>
+                <p>{{ error }}</p>
+                <form action="/add_word?word={{ word }}" method="post">
+                    <p><input type="text" name="translation" placeholder="Введите перевод слова"/></p>
+                    <p><input type="submit" value="Добавить слово"/></p>
+                </form>
+            {% endif %}
+                
+            <!--<label for="sessionData">Этот текст сохранится в хранилище данных сессии:</label>
+            <input id="sessionData">-->
+        </fieldset>
+    </div>
+
+
+</body>
+</html>
